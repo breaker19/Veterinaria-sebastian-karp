@@ -1,14 +1,21 @@
 import logo from './logo.svg';
+import gato from './gato.png';
 import './App.css';
-
+import { NavBar } from './components/NavBar';
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
+
+
+
   return (
     <div className="App">
+      <NavBar/>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={gato} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+         Bienvenidos al PetShop más grande del mundo!
         </p>
+
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -19,7 +26,11 @@ function App() {
         </a>
       </header>
     </div>
-  );
+  )
+
+  
+  
 }
+
 
 export default App;
