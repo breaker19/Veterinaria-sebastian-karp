@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
 import img from '../marca.png';
+import CartWidget from './CartWidget';
 export const NavBar = () => {
 
 return (
@@ -18,12 +19,12 @@ return (
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Link href="#features">Perros</Nav.Link>
-        <Nav.Link href="#pricing">Gatos</Nav.Link>
+        <Nav.Link href="#perros">Perros</Nav.Link>
+        <Nav.Link href="#gatos">Gatos</Nav.Link>
         <NavDropdown title="Tienda" id="collasible-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Alimento</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Veterinaria</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Juegos</NavDropdown.Item>
+          <NavDropdown.Item href="#alimento/3.1">Alimento</NavDropdown.Item>
+          <NavDropdown.Item href="#veterinaria/3.2">Veterinaria</NavDropdown.Item>
+          <NavDropdown.Item href="#juegos/3.3">Juegos</NavDropdown.Item>
           <NavDropdown.Divider />
 
         </NavDropdown>
@@ -34,7 +35,9 @@ return (
            memes de gatitos!
         </Nav.Link>
       </Nav>
+    
     </Navbar.Collapse>
+    <CartWidget />
     </Container>
   </Navbar>
 
