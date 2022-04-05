@@ -1,12 +1,20 @@
-// itemCount stock button
-// imp
-import {useState} from 'react';
+import React from 'react';
+
+
+import {useState, useEffect} from 'react';
 
 const ItemCount = () => {
 
-    const stock= 5;
+    const stock=  5;
 
     const [itemsQty, setitemsQty] = useState(1);
+
+    useEffect(() => { 
+        console.log(itemsQty, itemsQty);
+        setitemsQty(1);
+    }, [stock]);
+
+
 
     const limiteNegativo = () => {
         if (itemsQty >= 1) {
@@ -20,18 +28,11 @@ const ItemCount = () => {
             setitemsQty(itemsQty + 1)
         }
     }
-    const color =() => {
-        if (itemsQty <= 4) {
-            return '#20ff20'
-        } else {
-
-            return 'red'
-        }
-
-    }
+    const color = itemsQty <= 4 ? '#20ff20' : 'red';
+    
     return (
         <div> 
-            <h1  style={{color: color()}}> Stock restante: {stock - itemsQty}</h1>
+           
         
             <button onClick={() => limiteNegativo(itemsQty - 1)}>-</button>
 
