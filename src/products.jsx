@@ -53,8 +53,9 @@ export const ProductoMascotas = () => {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve(Pets);
-            
+            reject('Algo salió mal),');
         }, 2000);
+        
     
     });
     
