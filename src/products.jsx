@@ -7,7 +7,7 @@ const Pets = [
       price: 100,
         stock: 5,
         image:"https://kangoopet.com.ar/wp-content/uploads/2018/03/FIT_01.jpg",
-        description: "Royal Canin Fit",
+        description: "Alimento balanceado para gatos adultos. Ideal para gatos de interior pero con acceso al exterior o que les gusta jugar y correr por el hogar.",
         category: "pets",
         vencimiento: "Vencimiento: 20/03/2023",
         meme: "https://previews.123rf.com/images/bluedarkat/bluedarkat1308/bluedarkat130800030/21975871-funny-cat-cartoon-scratching-curtain.jpg"
@@ -48,18 +48,8 @@ const Pets = [
 
 
 ]
-//promesa result reject
-export const ProductoMascotas = () => {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            resolve(Pets);
-            reject('Algo salió mal),');
-        }, 2000);
-        
-    
-    });
-    
-}
+
+
 
 
 export default Pets;

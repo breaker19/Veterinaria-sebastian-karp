@@ -1,6 +1,6 @@
 import React from 'react';
 import Items  from "./Item";
-
+import ItemDetail from "./ItemDetail";
 
 const ItemList = ({ lista }) => {
     return (
@@ -13,7 +13,7 @@ const ItemList = ({ lista }) => {
         
                lista.map((item => 
 
-                <Items
+                <ItemDetail
                     imagen={item.image}
                     descripcion={item.description}
                     stock={item.stock}
