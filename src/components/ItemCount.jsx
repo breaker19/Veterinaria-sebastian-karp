@@ -10,7 +10,7 @@ const ItemCount = () => {
     const [itemsQty, setitemsQty] = useState(1);
 
     useEffect(() => { 
-        console.log(itemsQty, itemsQty);
+
         setitemsQty(1);
     }, [stock]);
 

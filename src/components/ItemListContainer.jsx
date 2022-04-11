@@ -3,30 +3,39 @@ import {useState, useEffect} from "react";
 import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
 import Pets from "../products";
-import {ProductoMascotas} from  './CustomFetch';
+import {PromisePets} from '../products';
+import { useParams } from "react-router";
 
 
 
-//effect setTimeout 
-const ItemListContainer = ({greeting}) => {
+
+const ItemListContainer = () => {
   const [datos, setDatos] = useState([]);
-
+  const {categoryId} = useParams();
+  
   useEffect(() => {
-    ProductoMascotas().then(data => {
-      setDatos(data);
-      console.table(data);
-    });
-  }, []);
+    if (categoryId == undefined) {
+      PromisePets(2000, Pets)
+      .then(resolve => {
+        setDatos(resolve);
+        console.log("todos los productos");
+      })
 
+    } else {
+      PromisePets(2000, Pets.filter (item => item.category === categoryId))
+      .then(resolve => setDatos(resolve))
+      
+    }
+ 
+  }, [datos]);
+  
   return (
-    <>
-    <div>
-      <h1>{greeting}</h1>
-    </div>
-    
-      <ItemList lista={datos} />
-
-      </>
+<>
+            <ItemList lista={datos}/>
+            {
+                console.log(datos)
+            }
+</>
   ); 
 
 }

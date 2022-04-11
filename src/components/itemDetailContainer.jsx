@@ -3,17 +3,20 @@ import {useState, useEffect} from "react";
  import {ProductoMascotas} from  './CustomFetch';
 import ItemDetail from "./ItemDetail";
 import Pets from "../products";
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
   const [datos, setDatos] = useState({});
+  const {id} = useParams();
 
   useEffect(() => {
-    ProductoMascotas(2000, Pets[0])
+    ProductoMascotas(2000, Pets.find (item => parseInt(item.id)))
     .then(data => {
-        setDatos(data);
-        console.table(data);
+      setDatos(data);
+ 
     });
-    }, []);
+  }, []);
+
 
       
   return (

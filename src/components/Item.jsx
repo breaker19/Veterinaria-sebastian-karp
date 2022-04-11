@@ -11,12 +11,12 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import {Container, Row, Col} from 'react-bootstrap';
 
 
-const Items= ({ memes, precio, descripcion, stock, imagen, product, vencimiento}) => {
+const Items= ({id, memes, precio, descripcion, stock, imagen, product, vencimiento, category}) => {
 
 
             return (
               <>
-
+<Col>
           <Card style={{display: 'flex', marginTop: 20}} md={{ maxWidth: 600}}>
           <CardHeader style={{background: 'red', color: 'white'}}
  
@@ -44,13 +44,16 @@ const Items= ({ memes, precio, descripcion, stock, imagen, product, vencimiento}
               <Typography variant="body2" color="text.secondary">
               <strong>$ {precio}</strong>
               </Typography>
+              <Typography variant="body2" color="text.secondary">
+              <strong> {category}</strong>
+              </Typography>
               <ItemCount />
             </CardContent>
 
 
           </Card>
 
-
+          </Col>
           </>
           
           );
