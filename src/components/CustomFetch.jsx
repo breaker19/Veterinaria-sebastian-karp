@@ -18,5 +18,3 @@ export const ProductoMascotas = (time, tarea) => {
     });
     
 }
-
-export default ProductoMascotas;
