@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './components/ItemListContainer';
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Error from './components/error';
 
 
 
@@ -19,6 +20,8 @@ function App() {
   <Routes>
 <Route path="/" element={<ItemListContainer />} />
 <Route path='/category/:categoryId' element={<ItemListContainer />} />
+<Route path= "*" element={<Error />} /> 
+
 
 
       </Routes>

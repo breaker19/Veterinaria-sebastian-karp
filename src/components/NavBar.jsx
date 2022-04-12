@@ -4,6 +4,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Navbar from 'react-bootstrap/Navbar';
 import img from '../marca.png';
 import CartWidget from './CartWidget';
+import { Link } from 'react-router-dom';
 export const NavBar = () => {
 
  
@@ -18,8 +19,10 @@ return (
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Link href="#perros">Perros</Nav.Link>
-        <Nav.Link href="#gatos">Gatos</Nav.Link>
+     
+     <Link to="/category/perros"> Perros </Link>
+
+     <Link to="/category/gatos"> Gatos </Link>
         <NavDropdown title="Tienda" id="collasible-nav-dropdown">
           <NavDropdown.Item href="#alimento/3.1">Alimento</NavDropdown.Item>
           <NavDropdown.Item href="#veterinaria/3.2">Veterinaria</NavDropdown.Item>
