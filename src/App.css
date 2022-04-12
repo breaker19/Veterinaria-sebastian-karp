@@ -1,6 +1,13 @@
 .App {
   text-align: center;
 }
+.responsive-navbar.navbar-nav a {
+  padding: 20px;
+  text-decoration: none;
+  color: #fe0000;
+  font-size: 17px;
+  text-align: center;
+}
 
 .App-logo {
   height: 40vmin;

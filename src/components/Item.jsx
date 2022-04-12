@@ -1,63 +1,57 @@
-
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
+import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
-import ItemCount from './ItemCount';
-import IconButton from '@mui/material/IconButton';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import {Container, Row, Col} from 'react-bootstrap';
+import { red } from '@mui/material/colors';
+
+
+import{Link} from 'react-router-dom';
+import {Col} from 'react-bootstrap';
 
 
 const Items= ({id, memes, precio, descripcion, stock, imagen, product, vencimiento, category}) => {
 
 
-            return (
-              <>
-<Col>
-          <Card style={{display: 'flex', marginTop: 20}} md={{ maxWidth: 600}}>
-          <CardHeader style={{background: 'red', color: 'white'}}
- 
-        action={
-          <IconButton aria-label="settings">
-            <MoreVertIcon />
-          </IconButton>
-        }
-        title= {product}
-        subheader= {vencimiento}/>
-            <CardMedia>
-    <img src={imagen} alt={product} width="500" height="auto" />
- </CardMedia>
-         
-            
-       
-            <CardContent>
-              <Typography variant="body2" color="black">
-                <h2>{descripcion}</h2>
-              </Typography>
-              <img src={memes} width="200" height="auto"/>
-              <Typography variant="body2" color="text.secondary">
-                <span>El stock es de:</span>{stock}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-              <strong>$ {precio}</strong>
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-              <strong> {category}</strong>
-              </Typography>
-              <ItemCount />
-            </CardContent>
+    return (
 
+<Col md={4}>
+      <Card sx={{ maxWidth: 345 }}>
+        <CardHeader
+          avatar={
+            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+             V
+            </Avatar>
+          }
+    
+          title={<h2>{product}</h2>}
+          subheader={vencimiento}
+        />
+        <CardMedia
+          component="img"
+          height='100%'
+          image={imagen}
+          alt={product}
+        />
+        <CardContent>
+      
+          <Typography variant="body" color="secondary">
+          Precio:  ${precio}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            Stock:{stock}
+          </Typography>
+        </CardContent>
 
-          </Card>
+<Link to={`/item/${id}`}> Ver Más</Link>
+      </Card>
+      </Col>
 
-          </Col>
-          </>
-          
-          );
-      }
+    );
+  }
+      
 export default Items;
 
 

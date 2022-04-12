@@ -42,6 +42,8 @@ const ItemCount = () => {
             <button onClick={()=> (alert(itemsQty + " " + "productos agregados" ))} style={{color: '#fff', background: 'red', margin: '0 20px'}}>Agregar al carrito</button>
 
 
+
+
         </div>
 
     )

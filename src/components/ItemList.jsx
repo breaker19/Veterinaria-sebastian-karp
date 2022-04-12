@@ -6,11 +6,12 @@ import {Container, Row, Col} from 'react-bootstrap';
 const ItemList = ({ lista }) => {
     return (
     <>
-<Container>
-<Row>
 
-        <div>
-          <div>
+
+        <Container>
+          <Row>
+            
+
                {
 
                lista.map((item => 
@@ -29,10 +30,10 @@ const ItemList = ({ lista }) => {
                 />))
                
             }
-            </div>
-            </div>
             </Row>
-            </Container>
+        </Container>
+         
+
             </>
     );
 

@@ -5,6 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import img from '../marca.png';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
+
 export const NavBar = () => {
 
  
@@ -13,35 +14,38 @@ return (
 
     <Navbar collapseOnSelect expand="lg" bg="ligth" variant="ligth">
     <Container>
-    <Navbar.Brand href="#home"><img  src= {img}  width="100%" height="100%"className="d-inline-block align-top"></img></Navbar.Brand>
+   <Link to="/"><Navbar.Brand><img  src= {img}  width="100%" height="100%"className="d-inline-block align-top"></img></Navbar.Brand></Link>
 
   
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">
-      <Nav className="me-auto">
+      <Nav className=" responsive-navbar">
      
-     <Link to="/category/perros"> Perros </Link>
+      <Link to={`/category/perros`}> Perros</Link>
 
      <Link to="/category/gatos"> Gatos </Link>
-        <NavDropdown title="Tienda" id="collasible-nav-dropdown">
+     <Link to="/category/juguetes"> Juguetes </Link>
+
+        {/* <NavDropdown title="Tienda" id="collasible-nav-dropdown">
           <NavDropdown.Item href="#alimento/3.1">Alimento</NavDropdown.Item>
           <NavDropdown.Item href="#veterinaria/3.2">Veterinaria</NavDropdown.Item>
           <NavDropdown.Item href="#juegos/3.3">Juegos</NavDropdown.Item>
+     
 
-          <NavDropdown.Divider />
+          <NavDropdown.Divider /> */}
 
           
 
-        </NavDropdown>
+        {/* </NavDropdown> */}
 
       </Nav>
 
       <Nav>
 
 
-        <Nav.Link eventKey={2} href="#memes">
+        {/* <Nav.Link eventKey={2} href="#memes">
            memes de gatitos!
-        </Nav.Link>
+        </Nav.Link> */}
 
       </Nav>
      

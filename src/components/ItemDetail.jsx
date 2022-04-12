@@ -10,11 +10,11 @@ import IconButton from '@mui/material/IconButton';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import {Container, Row, Col} from 'react-bootstrap';
 import {ProductoMascotas} from '../products';
+import { useState } from 'react';
 
 
 const ItemDetail= ({lista}) => {
-
-
+  const [datos, setDatos] = useState([]);
             return (
               <>
  
@@ -40,7 +40,11 @@ const ItemDetail= ({lista}) => {
               <Typography variant="body2" color="text.secondary">
               <strong>$ {lista.price}</strong>
               </Typography>
+
+        
               <ItemCount />
+     
+             
             </CardContent>
 
 

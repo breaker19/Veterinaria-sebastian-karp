@@ -18,7 +18,7 @@ const ItemListContainer = () => {
       ProductoMascotas(2000, Pets)
       .then(resolve => {
         setDatos(resolve);
-        console.log("todos los productos");
+
       })
 
     } else {
@@ -27,15 +27,13 @@ const ItemListContainer = () => {
       
     }
  
-  }, [datos ]);
+  }, [categoryId]);
   
   
   return (
 <>
             <ItemList lista={datos}/>
-            {
-                console.log(datos)
-            }
+
 </>
   ); 
 
