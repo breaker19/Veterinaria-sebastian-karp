@@ -56,6 +56,17 @@ const Pets = [
         vencimiento: "VDuración: 3 años aprox",
         meme: "https://previews.123rf.com/images/bluedarkat/bluedarkat1308/bluedarkat130800030/21975871-funny-cat-cartoon-scratching-curtain.jpg"
     },
+    {
+        product: "Whiskas",
+        id: 6,
+        price: 100,
+        stock: 12,
+        image:"https://jumboargentina.vteximg.com.br/arquivos/ids/586429-1000-1000/Alimento-Para-Gatos-Whiskas-Pasta-Sardina-85-Gr-1-42084.jpg?v=637265784244630000",
+        description: "Wiskas es una pasta de sardina, con una gran variedad de sabores, que se puede utilizar para gatos adultos de tamaño mediano y grande. ",
+        category: "gatos",
+        vencimiento: "Vencimiento: ver envase",
+        meme: "https://previews.123rf.com/images/bluedarkat/bluedarkat1308/bluedarkat130800030/21975871-funny-cat-cartoon-scratching-curtain.jpg"
+    },
 
 
 ]
