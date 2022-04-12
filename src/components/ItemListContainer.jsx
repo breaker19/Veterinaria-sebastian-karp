@@ -5,7 +5,7 @@ import ItemList from "./ItemList";
 import Pets from "../products";
 import {PromisePets} from '../products';
 import { useParams } from "react-router";
-
+import {ProductoMascotas} from './CustomFetch';
 
 
 
@@ -15,19 +15,20 @@ const ItemListContainer = () => {
   
   useEffect(() => {
     if (categoryId == undefined) {
-      PromisePets(2000, Pets)
+      ProductoMascotas(2000, Pets)
       .then(resolve => {
         setDatos(resolve);
         console.log("todos los productos");
       })
 
     } else {
-      PromisePets(2000, Pets.filter (item => item.category === categoryId))
+      ProductoMascotas(2000, Pets.filter (item => item.category === categoryId))
       .then(resolve => setDatos(resolve))
       
     }
  
-  }, [datos]);
+  }, [datos ]);
+  
   
   return (
 <>
