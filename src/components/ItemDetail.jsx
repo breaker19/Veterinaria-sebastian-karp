@@ -1,20 +1,21 @@
 
 import * as React from 'react';
 import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import ItemCount from './ItemCount';
-import IconButton from '@mui/material/IconButton';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import {Container, Row, Col} from 'react-bootstrap';
-import {ProductoMascotas} from '../products';
+import Checkout from './Checkout';
+
 import { useState } from 'react';
 
 
 const ItemDetail= ({lista}) => {
-  const [datos, setDatos] = useState([]);
+  const [datos, setDatos] = useState(0);
+
+  const onAdd = (qty) => {
+    setDatos(qty);
+}
             return (
               <>
  
@@ -41,12 +42,11 @@ const ItemDetail= ({lista}) => {
               <strong>$ {lista.price}</strong>
               </Typography>
 
-        
-              <ItemCount />
-     
-             
-            </CardContent>
+                       {
+                        datos === 0 ? <ItemCount stock={lista.stock}  onAdd={onAdd} /> : <Checkout />
+                    }
 
+            </CardContent>
 
           </Card>
 

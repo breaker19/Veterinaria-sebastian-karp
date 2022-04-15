@@ -1,17 +1,17 @@
 import React from 'react';
-
+import Error from './error';
 
 import {useState, useEffect} from 'react';
 
-const ItemCount = () => {
+const ItemCount = ({onAdd} ) => {
 
     const stock=  5;
 
-    const [itemsQty, setitemsQty] = useState(1);
+    const [itemsQty, setitemsQty] = useState(0);
 
     useEffect(() => { 
 
-        setitemsQty(1);
+        setitemsQty(0);
     }, [stock]);
 
 
@@ -31,20 +31,17 @@ const ItemCount = () => {
     const color = itemsQty <= 4 ? '#20ff20' : 'red';
     
     return (
-        <div> 
-           
-        
-            <button onClick={() => limiteNegativo(itemsQty - 1)}>-</button>
 
+    <div> 
+     <button onClick={() => limiteNegativo(itemsQty - 1)}>-</button>
 
-            <span>{itemsQty}</span>
-            <button onClick={() => limitestock(itemsQty + 1)}>+</button>
-            <button onClick={()=> (alert(itemsQty + " " + "productos agregados" ))} style={{color: '#fff', background: 'red', margin: '0 20px'}}>Agregar al carrito</button>
+     <span>{itemsQty}</span>
 
+     <button onClick={() => limitestock(itemsQty + 1)}>+</button>
 
+     <button style={{background: "red", color: "white", marginLeft: 12}} onClick={() => onAdd(itemsQty)}>Añadir Al Carrito</button>
 
-
-        </div>
+    </div>
 
     )
 }
