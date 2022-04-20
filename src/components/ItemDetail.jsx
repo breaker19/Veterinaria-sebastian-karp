@@ -6,15 +6,19 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import ItemCount from './ItemCount';
 import Checkout from './Checkout';
+import {useContext} from 'react';
+import {CartContext} from './CartContext';
 
 import { useState } from 'react';
 
 
 const ItemDetail= ({lista}) => {
   const [datos, setDatos] = useState(0);
+  const test = useContext(CartContext);
 
   const onAdd = (qty) => {
     setDatos(qty);
+    test.addToCart(lista , qty);
 }
             return (
               <>

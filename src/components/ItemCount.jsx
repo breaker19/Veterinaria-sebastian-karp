@@ -1,13 +1,14 @@
 import React from 'react';
 import Error from './error';
-
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useContext} from 'react';
+import {CartContext} from './CartContext';
 
 const ItemCount = ({onAdd} ) => {
 
     const stock=  5;
 
     const [itemsQty, setitemsQty] = useState(0);
+
 
     useEffect(() => { 
 
@@ -19,15 +20,20 @@ const ItemCount = ({onAdd} ) => {
     const limiteNegativo = () => {
         if (itemsQty >= 1) {
             setitemsQty(itemsQty - 1) 
-
+      
         }
     }
 
-    const limitestock = () => {
+     const limitestock = () => {
         if (itemsQty <= 4) {
             setitemsQty(itemsQty + 1)
+            
         }
+     
+       
     }
+  
+
     const color = itemsQty <= 4 ? '#20ff20' : 'red';
     
     return (
@@ -39,7 +45,7 @@ const ItemCount = ({onAdd} ) => {
 
      <button onClick={() => limitestock(itemsQty + 1)}>+</button>
 
-     <button style={{background: "red", color: "white", marginLeft: 12}} onClick={() => onAdd(itemsQty)}>Añadir Al Carrito</button>
+     <button style={{background: "red", color: "white", marginLeft: 12}} onClick={() => onAdd(itemsQty) }>Añadir Al Carrito</button>
 
     </div>
 

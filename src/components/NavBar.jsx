@@ -51,7 +51,7 @@ return (
      
     </Navbar.Collapse>
 
-    <CartWidget />
+    <Link to="/cart"><CartWidget /></Link>
      
     </Container>
      

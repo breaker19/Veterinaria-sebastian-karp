@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
   
   useEffect(() => {
     if (itemId === undefined) {
-      ProductoMascotas(0, Pets [itemId]).then(resolve => {
+      ProductoMascotas(0).then(resolve => {
         setDatos(resolve);
 
       })

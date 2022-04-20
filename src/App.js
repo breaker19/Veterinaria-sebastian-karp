@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Error from './components/error';
 import ItemDetailContainer from './components/itemDetailContainer';
 import Cart from './components/Cart';
+import CartContextProvider from './components/CartContext';
 
 
 
@@ -16,7 +17,7 @@ function App() {
   return (
     
     <div className="App">
-
+<CartContextProvider>
   <BrowserRouter>
   <NavBar/>
   <Routes>
@@ -30,7 +31,7 @@ function App() {
 
       </Routes>
       </BrowserRouter>
-
+      </CartContextProvider>
     </div>
 
   ) 

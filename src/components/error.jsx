@@ -5,6 +5,7 @@ const Error = () => {
     <>
 <img  src= {ups}  width="50%" height="50%"className="d-inline-block align-top"
         alt="Pet Shop"/>
+       
 
 </>  
     
