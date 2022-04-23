@@ -1,7 +1,6 @@
 import React from 'react';
-import Error from './error';
-import {useState, useEffect, useContext} from 'react';
-import {CartContext} from './CartContext';
+import {useState, useEffect} from 'react';
+
 
 const ItemCount = ({onAdd} ) => {
 

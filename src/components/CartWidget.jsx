@@ -3,7 +3,7 @@ import Badge from '@mui/material/Badge';
 import IconButton from '@mui/material/IconButton';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { useContext } from 'react';
-import { CartContext } from './CartContext';
+import {CartContext} from './CartContext';
 
 
 
@@ -17,8 +17,8 @@ const CartWidget =() => {
 
 
     <IconButton style={{color: 'red', width: 60}} aria-label="cart">
-      <Badge color="primary" badgeContent={test.cartList.length}>
-
+      <Badge color="primary" badgeContent={test.calcularItems()}>
+      
         <ShoppingCartIcon style={{width:30, height:30}}/>
       </Badge>
     </IconButton>
