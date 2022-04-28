@@ -1,9 +1,10 @@
 import React from "react";
 import {useState, useEffect} from "react";
- import {ProductoMascotas} from  './CustomFetch';
 import ItemDetail from "./ItemDetail";
-import Pets from "../products";
+
 import {useParams} from "react-router";
+import { doc, getDoc } from "firebase/firestore";
+import db from "./firebaseConfig";
 
 const ItemDetailContainer = () => {
   const [datos, setDatos] = useState({});
@@ -11,18 +12,27 @@ const ItemDetailContainer = () => {
   const {itemId} = useParams();
   
   useEffect(() => {
-    if (itemId === undefined) {
-      ProductoMascotas(0).then(resolve => {
-        setDatos(resolve);
-
-      })
-
-    } else {
-      ProductoMascotas(0, Pets.find (item => item.id === parseInt(itemId)))
-      .then(resolve => setDatos(resolve))
+    const docRef = doc(db, "products", itemId);
+    const fetchData = async () => {
+    const docSnap = await getDoc(docRef);
+    
+    if (docSnap.exists()) {
+      const data = {
+        id: docSnap.id,
+        ...docSnap.data()
+      };
       
+      return data;
+     
+    } else {
+     
+      console.log("no hay documentos encontrados");
     }
-  }, [datos]);
+  };
+  fetchData()
+  .then(data => setDatos (data))
+  .catch(err => console.log (err));
+  }, []);
       
   return (
       <>

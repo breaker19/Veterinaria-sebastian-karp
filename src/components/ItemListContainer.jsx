@@ -1,11 +1,9 @@
 import React from "react";
 import {useState, useEffect} from "react";
-import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
-import Pets from "../products";
-import {PromisePets} from '../products';
 import { useParams } from "react-router";
-import {ProductoMascotas} from './CustomFetch';
+import fetchData from "./firestoreFetch";
+
 
 
 
@@ -14,22 +12,13 @@ const ItemListContainer = () => {
   const {categoryId} = useParams();
   
   useEffect(() => {
-    if (categoryId == undefined) {
-      ProductoMascotas(2000, Pets)
-      .then(resolve => {
-        setDatos(resolve);
-
-      })
-
-    } else {
-      ProductoMascotas(2000, Pets.filter (item => item.category === categoryId))
-      .then(resolve => setDatos(resolve))
-      
-    }
- 
+    fetchData( categoryId)
+    .then(data => setDatos (data))
+    .catch(err => console.log (err));
   }, [categoryId]);
-  
-  
+
+
+
   return (
 <>
             <ItemList lista={datos}/>

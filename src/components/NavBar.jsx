@@ -4,6 +4,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import img from '../marca.png';
 import CartWidget from './CartWidget';
 import { Link } from 'react-router-dom';
+import { collection, getDocs } from "firebase/firestore";
 
 export const NavBar = () => {
 
@@ -25,28 +26,9 @@ return (
      <Link to="/category/gatos"> Gatos </Link>
      <Link to="/category/juguetes"> Juguetes </Link>
 
-        {/* <NavDropdown title="Tienda" id="collasible-nav-dropdown">
-          <NavDropdown.Item href="#alimento/3.1">Alimento</NavDropdown.Item>
-          <NavDropdown.Item href="#veterinaria/3.2">Veterinaria</NavDropdown.Item>
-          <NavDropdown.Item href="#juegos/3.3">Juegos</NavDropdown.Item>
-     
-
-          <NavDropdown.Divider /> */}
-
-          
-
-        {/* </NavDropdown> */}
 
       </Nav>
 
-      <Nav>
-
-
-        {/* <Nav.Link eventKey={2} href="#memes">
-           memes de gatitos!
-        </Nav.Link> */}
-
-      </Nav>
      
     </Navbar.Collapse>
 

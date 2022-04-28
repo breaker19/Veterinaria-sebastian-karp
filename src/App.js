@@ -11,10 +11,12 @@ import CartContextProvider from './components/CartContext';
 
 
 
-function App() {
 
+function App() {
+  
 
   return (
+    
     
     <div className="App">
 <CartContextProvider>
@@ -26,10 +28,6 @@ function App() {
 <Route path='/item/:itemId' element={<ItemDetailContainer />} />
 <Route path='/cart' element={<Cart />} />
 <Route path= "*" element={<Error />} /> 
-
-
-
-
       </Routes>
       </BrowserRouter>
       </CartContextProvider>

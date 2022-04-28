@@ -38,7 +38,7 @@ const ItemDetail= ({lista}) => {
               <Typography variant="body2" color="black">
                 <h4>{lista.description}</h4>
               </Typography>
-              <img src={lista.memes} width="200" height="auto"/>
+              <img src={lista.meme} width="200" height="auto"/>
               <Typography variant="body2" color="text.secondary">
                 <span>El stock es de:</span>{lista.stock}
               </Typography>

@@ -38,23 +38,17 @@ const Cart =()=>{
       <h4>{item.description}</h4>
     </Typography>
     <img src={item.meme} width="200" height="auto"/>
+  
     <Typography variant="body2" color="text.secondary">
-      <span>El stock es de:</span>{item.stock}
+    <strong>Precio por unidad $ {item.price}</strong>
     </Typography>
     <Typography variant="body2" color="text.secondary">
-    <strong>$ {item.price}</strong>
-    </Typography>
-    <Typography variant="body2" color="text.secondary">
-    <strong>Cantidad:{item.qtyItem }</strong>
+    <strong>Cantidad seleccionada:{item.qtyItem }</strong>
     </Typography>
   
     <Typography variant="body2" color="text.secondary">
     <strong>Total: {item.qtyItem  * item.price}</strong>
     </Typography>
-
-
-  
-              
 
 
     <Button onClick={()=>test.removeFromCart(item)}> borrar </Button>
