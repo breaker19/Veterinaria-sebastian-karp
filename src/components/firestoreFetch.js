@@ -7,7 +7,7 @@ const fetchData = async (categoryId) => {
     if(categoryId) {
         q = query(collection(db,'products'),where('category.name', '==', categoryId));
     }else {
-        q = query(collection(db, 'products')); orderBy("product")
+        q = query(collection(db, 'products')); orderBy("name")
       }
       const getProducts =await getDocs(q);
       const products = getProducts.docs.map((doc) => ({

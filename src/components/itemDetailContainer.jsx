@@ -24,9 +24,6 @@ const ItemDetailContainer = () => {
       
       return data;
      
-    } else {
-     
-      console.log("no hay documentos encontrados");
     }
   };
   fetchData()
@@ -38,7 +35,6 @@ const ItemDetailContainer = () => {
       <>
 
 <ItemDetail lista={datos} />
-{console.log(datos)}
 
       </>
     );
