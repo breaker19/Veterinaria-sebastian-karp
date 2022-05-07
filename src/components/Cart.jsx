@@ -8,7 +8,7 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import {Container, Row, Col} from 'react-bootstrap';
-import gato from '../catCart.jpg'
+import gato from '../images/catCart.jpg';
 import { serverTimestamp } from 'firebase/firestore';
 import db from './firebaseConfig';
 import {doc, setDoc, collection, updateDoc, increment } from '@firebase/firestore';
@@ -17,9 +17,6 @@ import {doc, setDoc, collection, updateDoc, increment } from '@firebase/firestor
 
 const Cart =()=>{
     const test =useContext(CartContext);
-
-   
-
 
 const checkout =()=>{
   const dataBase =
@@ -38,11 +35,12 @@ const checkout =()=>{
   });
   let order = {
 buyer: {
-  name: "Juan",
+  name: "Sebastian",
   address: "Calle falsa 123",
-  city: "Ciudad de prueba",
-  country: "Pais de prueba",
+  city: "Buenos Aires",
+  country: "Argentina",
   email: "sebastian@tormenta.com.ar"
+
 },
 
 date: serverTimestamp(),
@@ -61,7 +59,7 @@ const createOrder = async () => {
 };
 
 createOrder()
-.then(result => alert("gracias por comprar: "))
+.then(result => alert("GRACIAS POR SU COMPRA ")) 
 .catch(err => console.log(err));
 
 test.removeAllFromCart();

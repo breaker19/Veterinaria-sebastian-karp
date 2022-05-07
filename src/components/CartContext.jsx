@@ -1,5 +1,5 @@
 import { createContext} from "react"; 
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 
 export const CartContext = createContext();
 
@@ -34,7 +34,7 @@ const CartContextProvider = ({children}) => {
         return qty.reduce((total, qty) => total + qty, 0);
     }
   
-  
+    
 
 
 

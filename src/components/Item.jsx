@@ -6,8 +6,6 @@ import CardContent from '@mui/material/CardContent';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
-
-
 import{Link} from 'react-router-dom';
 import {Col} from 'react-bootstrap';
 
@@ -17,7 +15,7 @@ const Items= ({id, memes, precio, descripcion, stock, imagen, product, vencimien
 
     return (
 
-<Col md={4}>
+<Col md={4} style={{marginTop: 50}}>
       <Card sx={{ maxWidth: 345 }}>
         <CardHeader
           avatar={
@@ -45,7 +43,7 @@ const Items= ({id, memes, precio, descripcion, stock, imagen, product, vencimien
           </Typography>
         </CardContent>
 
-<Link to={`/item/${id}`}> Ver Más</Link>
+<Link to={`/item/${id}`} style={{color: 'white', background:"red", fontSize:"15", borderRadius:"20px", fontWeight:"bold", padding: "10px 100px", textAlign:"center", textDecoration: "none"}}> Ver Más</Link>
       </Card>
       </Col>
 

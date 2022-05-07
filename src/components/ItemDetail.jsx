@@ -8,7 +8,6 @@ import ItemCount from './ItemCount';
 import Checkout from './Checkout';
 import {useContext} from 'react';
 import {CartContext} from './CartContext';
-
 import { useState } from 'react';
 
 
