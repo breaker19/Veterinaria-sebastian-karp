@@ -2,9 +2,9 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 
 
-const ItemCount = ({onAdd} ) => {
+const ItemCount = ({stock, onAdd} ) => {
 
-    const stock=  5;
+  
 
     const [itemsQty, setitemsQty] = useState(0);
 
@@ -12,19 +12,19 @@ const ItemCount = ({onAdd} ) => {
     useEffect(() => { 
 
         setitemsQty(0);
-    }, [stock]);
+    }, []);
 
 
 
     const limiteNegativo = () => {
-        if (itemsQty >= 1) {
+        if (itemsQty > stock) {
             setitemsQty(itemsQty - 1) 
       
         }
     }
 
      const limitestock = () => {
-        if (itemsQty <= 4) {
+        if (itemsQty < stock) {
             setitemsQty(itemsQty + 1)
             
         }
@@ -33,7 +33,6 @@ const ItemCount = ({onAdd} ) => {
     }
   
 
-    const color = itemsQty <= 4 ? '#20ff20' : 'red';
     
     return (
 
