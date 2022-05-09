@@ -9,17 +9,8 @@ import { Link, NavLink } from 'react-router-dom';
 
 export const NavBar = () => {
 
-
-
-  
- 
 return (
  
-
-
-
- 
-
     <Navbar collapseOnSelect expand="lg" bg="ligth" variant="ligth">
       
     <Container >

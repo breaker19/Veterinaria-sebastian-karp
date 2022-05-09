@@ -23,7 +23,7 @@ const Items= ({id, memes, precio, descripcion, stock, imagen, product, vencimien
              V
             </Avatar>
           }
-    
+  
           title={<h2>{product}</h2>}
           subheader={vencimiento}
         />

@@ -13,8 +13,6 @@ import { serverTimestamp } from 'firebase/firestore';
 import db from './firebaseConfig';
 import {doc, setDoc, collection, updateDoc, increment } from '@firebase/firestore';
 
-
-
 const Cart =()=>{
     const test =useContext(CartContext);
 
@@ -65,8 +63,6 @@ createOrder()
 test.removeAllFromCart();
   }
  
-
-
 
     return(
         <>
